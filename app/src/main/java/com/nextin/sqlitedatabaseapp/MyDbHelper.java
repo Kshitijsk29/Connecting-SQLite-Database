@@ -2,15 +2,15 @@ package com.nextin.sqlitedatabaseapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
 
 public class MyDbHelper extends SQLiteOpenHelper {
-
     private static final String DATABASE_NAME = "ContactDB";
     private static final int VERSION = 1;
-
     private static final  String TABLE_NAME = "contacts";
     private static final  String COLUMN_ONE_NAME = "name";
     private static final  String COLUMN_TWO_EMAIL = "email";
@@ -35,13 +35,11 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
 
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL(" DROP TABLE IF EXISTS "+TABLE_NAME);
     }
-
 
     public void addData(String name , String email , int phone){
 
@@ -53,7 +51,31 @@ public class MyDbHelper extends SQLiteOpenHelper {
          values.put(COLUMN_FOUR_PHONE_NO, phone);
 
          database.insert(TABLE_NAME, null, values);
+    }
 
+
+    public ArrayList<ContactList> fetchData(){
+
+        SQLiteDatabase database = this.getReadableDatabase();
+
+       Cursor cursor = database.rawQuery(" Select * from "+TABLE_NAME ,
+               null);
+
+       ArrayList<ContactList> arrayList = new ArrayList<>();
+
+       while(cursor.moveToNext()){
+
+           ContactList conList = new ContactList();
+
+           conList.id = cursor.getInt(0);
+           conList.name = cursor.getString(1);
+           conList.email = cursor.getString(2);
+           conList.phone_no = cursor.getInt(3);
+
+           arrayList.add(conList);
+
+       }
+        return arrayList;
     }
 
 }
