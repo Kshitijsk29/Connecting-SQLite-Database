@@ -1,19 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:text="Id "
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Id "
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        >
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:text="Name"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="name"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        >
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:text="Email"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="email"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        >
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:text="Phone"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Phone"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnPrevious"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:text="Previous"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="20dp"
+            android:drawableLeft="@drawable/baseline_arrow_back_24"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="@color/black"
+            android:drawableEnd="@drawable/baseline_arrow_forward_24"
+            android:text="Next"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
