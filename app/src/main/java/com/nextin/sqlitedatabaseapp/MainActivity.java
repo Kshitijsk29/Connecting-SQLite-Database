@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
         try (MyDbHelper helperClass = new MyDbHelper(this)) {
 
-//            helperClass.addData("kshitij","kshitij@gmail.com",945632102);
-//            helperClass.addData("ram","ram@gmail.com",945639102);
-//            helperClass.addData("om","om@gmail.com",366874521);
-//            helperClass.addData("veer","veer@gmail.com",658741260);
-//            helperClass.addData("rahul","rahul@gmail.com",945632102);
+//            helperClass.addData("shinu","shinu@gmail.com",258963147);
+//            helperClass.addData("samu","samu@gmail.com",654123987);
+//            helperClass.addData("prem","prem@gmail.com",653258741);
+//            helperClass.addData("bali","bali@gmail.com",865741239);
+//            helperClass.addData("sham","sham@gmail.com",123547896);
 //            helperClass.addData("raj","raj@gmail.com",569874123);
 //            helperClass.addData("radha","radha@gmail.com",945632102);
 //            helperClass.addData("rishi","rishi@gmail.com",945632102);
@@ -40,18 +40,22 @@ public class MainActivity extends AppCompatActivity {
 //            helperClass.addData("pooja","pooja@gmail.com",741203698);
 
 
-            ArrayList<ContactList> arrContacts = helperClass.fetchData();
+           ArrayList<ContactList> arrContacts = helperClass.fetchData();
 
+            ContactList conList = new ContactList();
+            conList.rollno = 5;
+            conList.phone_no = 120000001;
+
+            helperClass.updateData(conList);
 
             for (int i = 0; i < arrContacts.size(); i++) {
 
-                Log.i("Contact List" ,"id :" +arrContacts.get(i).id+ ", name " +
+                Log.i("Contact List" ,"id :" +arrContacts.get(i).rollno+ ", name " +
 
-                        ":"+arrContacts.get(i).name+" , email :"+arrContacts.get(i).email+ " , phone : "+arrContacts.get(i).phone_no);
-
+                        ":"+arrContacts.get(i).name+" , email :"+arrContacts.get(i).email
+                        + " , phone : "+arrContacts.get(i).phone_no);
             }
-
-
+            
         }
     }
 

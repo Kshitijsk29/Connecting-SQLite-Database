@@ -67,7 +67,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
            ContactList conList = new ContactList();
 
-           conList.id = cursor.getInt(0);
+           conList.rollno = cursor.getInt(0);
            conList.name = cursor.getString(1);
            conList.email = cursor.getString(2);
            conList.phone_no = cursor.getInt(3);
@@ -76,6 +76,16 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
        }
         return arrayList;
+    }
+
+    public void updateData(ContactList contacts){
+
+        SQLiteDatabase database = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_FOUR_PHONE_NO ,contacts.phone_no);
+
+        database.update(TABLE_NAME,cv, COLUMN_THREE_ROLL_NO + " = "+contacts.phone_no , null);
     }
 
 }
