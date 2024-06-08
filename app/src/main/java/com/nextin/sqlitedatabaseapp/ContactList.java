@@ -1,7 +1,7 @@
 package com.nextin.sqlitedatabaseapp;
 
 public class ContactList {
-    int id , phone_no;
+    int rollno , phone_no;
     String name , email ;
 
 //   public ContactList(int id, int phome_no , String name, String email){
